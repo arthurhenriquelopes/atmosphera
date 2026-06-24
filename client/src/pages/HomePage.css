@@ -1,0 +1,150 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+.home-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-header {
+  flex: 5.5; /* Top half takes ~55% */
+  background-color: #4a6fa5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  color: white;
+  transition: background 0.5s ease;
+}
+
+.search-wrapper {
+  width: 100%;
+  margin-top: 1rem;
+  z-index: 10;
+}
+
+/* Override SearchBar to look cleaner in this mobile view */
+.search-wrapper .input-field {
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+}
+.search-wrapper .btn {
+  display: none; /* Hide default buttons to keep it clean, relying on debounce */
+}
+
+.hero-weather {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.weather-condition {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.weather-location {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.weather-temp {
+  font-size: 6.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mobile-body {
+  flex: 4.5;
+  background-color: white;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tab {
+  flex: 1;
+  padding: 1.2rem 0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.tab.active {
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.tab-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 1rem;
+}
+
+.forecast-day {
+  font-weight: 500;
+  color: #333;
+}
+
+.forecast-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.forecast-temp {
+  font-weight: 700;
+  color: #333;
+}
+
+.forecast-desc {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loading-text, .error-text {
+  margin-top: 3rem;
+}

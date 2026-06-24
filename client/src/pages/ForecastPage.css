@@ -1,0 +1,92 @@
+.page-container {
+  animation: fadeIn 0.4s ease;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+}
+
+.chart-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem 1rem 1rem 0;
+}
+
+.chart-section h3 {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.chart-container {
+  height: 300px;
+  width: 100%;
+}
+
+.daily-forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.daily-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.daily-card:hover {
+  transform: translateY(-5px);
+}
+
+.daily-date {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.daily-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.daily-temps {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.max-temp {
+  font-weight: 700;
+}
+
+.min-temp {
+  color: var(--text-secondary);
+}
+
+.daily-desc {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.daily-extra {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}

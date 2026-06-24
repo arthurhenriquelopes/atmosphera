@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model WeatherRecord {
+  id          Int      @id @default(autoincrement())
+  location    String
+  latitude    Float
+  longitude   Float
+  dateStart   DateTime
+  dateEnd     DateTime
+  temperature Float
+  feelsLike   Float?
+  humidity    Int?
+  windSpeed   Float?
+  description String
+  icon        String?
+  rawData     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

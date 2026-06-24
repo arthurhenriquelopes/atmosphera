@@ -1,0 +1,73 @@
+.export-panel {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.export-panel h3 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+
+.export-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.records-table-container {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.records-table th,
+.records-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.records-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.records-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.records-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.edit-input {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
