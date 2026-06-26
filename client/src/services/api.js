@@ -8,6 +8,7 @@ export const weatherService = {
   getCurrent: (q, lat, lon) => api.get('/weather/current', { params: { q, lat, lon } }).then(res => res.data),
   getForecast: (q, lat, lon) => api.get('/weather/forecast', { params: { q, lat, lon } }).then(res => res.data),
   getExplore: (q) => api.get('/weather/explore', { params: { q } }).then(res => res.data),
+  geocode: (q) => api.get('/weather/geocode', { params: { q } }).then(res => res.data),
 };
 
 export const recordsService = {

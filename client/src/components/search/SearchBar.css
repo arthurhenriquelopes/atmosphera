@@ -55,3 +55,43 @@
 .location-btn:hover {
   opacity: 1;
 }
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 1000;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.suggestions-dropdown li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s ease;
+}
+
+.suggestions-dropdown li:hover {
+  background: #f0f0f0;
+}
+
+.sugg-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.sugg-state {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}

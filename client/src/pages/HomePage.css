@@ -1,109 +1,144 @@
-.empty-state {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 2rem;
-  background-color: #f0f0f0;
-}
+/* ============================
+   HOME PAGE — MOBILE APP LAYOUT
+   ============================ */
 
 .home-mobile {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: hidden;
 }
 
+/* ── TOP HERO SECTION ── */
 .mobile-header {
-  flex: 5.5; /* Top half takes ~55% */
+  flex: 0 0 55%;
   background-color: #4a6fa5;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 1rem;
+  padding: 1.2rem 1.2rem 0;
   color: white;
   transition: background 0.5s ease;
+  overflow: hidden;
+}
+
+.mobile-header.empty-header {
+  flex: 1 1 100%;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .search-wrapper {
   width: 100%;
-  margin-top: 1rem;
   z-index: 10;
 }
 
-/* Override SearchBar to look cleaner in this mobile view */
-.search-wrapper .input-field {
-  background: rgba(0,0,0,0.3);
-  border: none;
-  color: white;
-}
-.search-wrapper .btn {
-  display: none; /* Hide default buttons to keep it clean, relying on debounce */
+/* ── SEARCH BAR OVERRIDES FOR EMPTY STATE ── */
+.empty-header .search-form {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
+.empty-header .search-input {
+  color: #111;
+}
+
+.empty-header .search-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.empty-header .search-icon,
+.empty-header .location-btn {
+  color: #111;
+}
+
+/* ── HERO WEATHER INFO ── */
 .hero-weather {
   margin-top: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
 }
 
-.weather-condition {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-
-.weather-location {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
+.hero-icon {
+  width: 100px;
+  height: 75px;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.35));
 }
 
 .weather-temp {
-  font-size: 6.5rem;
+  font-size: 5.5rem;
   font-weight: 700;
   line-height: 1;
+  letter-spacing: -3px;
+  margin: -0.2rem 0 0.2rem;
 }
 
+.weather-condition {
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.weather-location {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ── BOTTOM BODY ── */
 .mobile-body {
-  flex: 4.5;
+  flex: 0 0 45%;
   background-color: white;
-  border-radius: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .tabs {
   display: flex;
   border-bottom: 1px solid #eee;
+  flex-shrink: 0;
 }
 
 .tab {
   flex: 1;
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #aaa;
+  color: #bbb;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
   font-family: inherit;
+  border-bottom: 2px solid transparent;
 }
 
 .tab.active {
   color: #333;
-  border-bottom: 2px solid #333;
+  border-bottom-color: #333;
 }
 
 .tab-content {
   flex: 1;
-  padding: 1.5rem;
+  padding: 0.5rem 1.2rem;
   overflow-y: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+.tab-content::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari */
 }
 
+/* ── FORECAST LIST ── */
 .forecast-list {
   display: flex;
   flex-direction: column;
@@ -111,33 +146,51 @@
 
 .forecast-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid #f5f5f5;
-  font-size: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.forecast-row:last-child {
+  border-bottom: none;
 }
 
 .forecast-day {
   font-weight: 500;
   color: #333;
+  font-size: 0.95rem;
+  flex: 1;
 }
 
 .forecast-info {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.forecast-row-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 .forecast-temp {
   font-weight: 700;
   color: #333;
+  font-size: 0.95rem;
+  min-width: 42px;
+  text-align: right;
 }
 
 .forecast-desc {
   font-size: 0.8rem;
-  color: #888;
+  color: #999;
+  min-width: 50px;
+  text-align: right;
 }
 
+/* ── MISC ── */
 .coming-soon {
   display: flex;
   justify-content: center;
@@ -147,4 +200,256 @@
 
 .loading-text, .error-text {
   margin-top: 3rem;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* ── EMPTY STATE ENHANCEMENTS ── */
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.5px;
+}
+
+.brand-logo-large {
+  width: 1000px;
+  max-width: 90%;
+  margin: 0.5rem 0 0.5rem 0;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  object-fit: contain;
+}
+
+.brand-logo-small {
+  width: 140px;
+  max-width: 50%;
+  margin: 0 auto 1.5rem auto;
+  filter: invert(1) drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+  object-fit: contain;
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.suggested-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  max-width: 320px;
+}
+
+.city-chip {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.city-chip:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.city-chip:active {
+  transform: translateY(0);
+}
+
+/* ── FUTURISTIC LIGHT PATTERN BACKGROUND ── */
+.futuristic-light-bg {
+  background-color: #f7f4ec; /* Eggshell/off-white */
+  position: relative;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 1. O Grid que se move (usando GPU para fluidez absoluta 60fps) */
+.futuristic-light-bg::after {
+  content: '';
+  position: absolute;
+  /* Cria uma margem de folga fora da tela para o grid poder se mover sem "acabar" */
+  top: -60px; left: -60px; right: -60px; bottom: -60px;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+  animation: panGrid 4s linear infinite;
+}
+
+@keyframes panGrid {
+  0% { transform: translate3d(0px, 0px, 0); }
+  100% { transform: translate3d(30px, 30px, 0); } /* Move exatamente 1 bloco do grid para loop invisível */
+}
+
+/* 2. O degradê radial que esfumaça as bordas (fica parado por cima do grid) */
+.futuristic-light-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, #f7f4ec 85%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.futuristic-light-bg .empty-content {
+  z-index: 2;
+}
+
+/* ── HISTORY TAB ── */
+.export-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+.export-links a {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  background: #f4f4f4;
+  border-radius: 6px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.export-links a:hover {
+  background: #e0e0e0;
+}
+.tab-msg {
+  text-align: center;
+  color: #999;
+  margin-top: 2rem;
+}
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+.history-card-left h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+.history-date {
+  font-size: 0.75rem;
+  color: #999;
+}
+.history-card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.history-temp {
+  font-weight: 700;
+  color: #333;
+}
+.history-del-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  font-size: 1.1rem;
+  padding: 0;
+}
+.history-del-btn:hover {
+  opacity: 1;
+}
+
+/* ── ABOUT TAB ── */
+.about-tab {
+  padding: 0.5rem 0;
+}
+.about-section {
+  margin-bottom: 1.5rem;
+}
+.about-section h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+}
+.about-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.about-sub {
+  display: block;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.2rem;
+}
+.about-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #333;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tech-chips span {
+  background: #f0f0f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #444;
+  font-weight: 600;
 }
