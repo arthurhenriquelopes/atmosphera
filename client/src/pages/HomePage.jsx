@@ -200,7 +200,7 @@ export default function HomePage() {
               <div className="about-section">
                 <h3>Developer</h3>
                 <p>PM Accelerator Applicant</p>
-                <span className="about-sub">AI Engineer Intern Assessment</span>
+                <span className="about-sub">Full Stack Engineer Assessment</span>
               </div>
               <div className="about-section">
                 <h3>PM Accelerator</h3>
